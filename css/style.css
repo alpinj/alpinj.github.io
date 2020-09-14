@@ -31,6 +31,13 @@ a{
 	color: rgb(49, 49, 49);
 }
 
+.btn{
+	background-color: yellow;
+	color: black;
+	border-radius: 4px;
+	padding: 20px 15px;
+}
+
 .separator{
 	width: 50%;
 }
@@ -47,4 +54,8 @@ a{
 	width: 300px;
 	height: 400px;
 	background-color: cornflowerblue;
+}
+
+footer{
+	margin: auto;
 }
