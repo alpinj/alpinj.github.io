@@ -3,6 +3,7 @@
 
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>alpinj</title>
 	<link href="css/style.css" rel="stylesheet" type="text/css">
 		
@@ -69,7 +70,7 @@
 
 	<div class="section black-bg pad-lr" id="about-section">
 		<div id="about-text-section">
-			<h2 class="section-title">skills</h2>
+			<h2 class="section-title">about</h2>
 			<p class="body-text">
 			I started to design when I was in college. In every project, I always get the designer role in the group. I always fascinated by the app that prevent you to do things or sometime encourage you to do things.
 
@@ -105,7 +106,7 @@
 	
 	skills.forEach(function(element) {
 		let li = document.createElement("li");
-		li.className = "pill-items";
+		li.className = "pill-items body-2-text";
 		li.appendChild(document.createTextNode(element));
 		document.getElementById("skill-pills").appendChild(li);
 	});

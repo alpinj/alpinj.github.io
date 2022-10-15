@@ -45,7 +45,7 @@ header{
 }
 
 #logo{
-	width: 150px;
+	width: 200px;
 	height: 100%;
 	border-right: 1px solid white;
 	display: flex;
@@ -94,7 +94,7 @@ h1{
 	margin: 0px;
 }
 
-h2.section-title{
+.section-title{
 	font-weight: 700;
 	font-size: 32px;
 	line-height: 170%;
@@ -103,14 +103,13 @@ h2.section-title{
 	padding-bottom: 24px;
 }
 
-p.body-text{
+.body-text{
 	font-size: 24px;
 	line-height: 170%;
 	margin: 0px;
 }
 
-p.body-2-text{
-	font-weight: 500;
+.body-2-text{
 	font-size: 20px;
 	line-height: 170%;
 	margin: 0px;
@@ -163,10 +162,7 @@ button{
 }
 
 .pill-items{
-	font-weight: 400;
-	font-size: 20px;
-	line-height: 170%;
-	
+
 	padding: 8px 16px;
 	border: 1px solid #000000;
 	border-radius: 40px;
@@ -250,6 +246,32 @@ button{
 	background-color: white;
 	border: 1px solid white; 
 	border-radius: 50%;
-
-	
 }
+
+/* If the screen size is 1366 wide or less, hide the element */
+@media only screen and (max-width: 1366px) {
+	.pad-lr{
+		padding-left: 150px;
+		padding-right: 150px;
+	}
+
+	.navigation-items > a{
+		font-size: 16px;
+	}
+
+	.section-title{
+		font-size: 24px;
+	}
+	
+	.body-text{
+		font-size: 20px;
+	}
+	
+	.body-2-text{
+		font-size: 16px;
+	}
+
+	#work-exp-list{
+		gap: 32px;
+	}
+  }
