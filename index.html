@@ -11,6 +11,8 @@
 
 <body>
 	<div class="black-bg" id="hero-section">
+
+		<!-- Top Navbar -->
 		<header class="pad-lr">
 			<div id="logo">
 				<a href="" id="logo-text">alpinj.</a>
@@ -24,11 +26,12 @@
 			</nav>
 		</header>
 
+		<!-- Hero Section -->
 		<div class="pad-lr" id="hero-content">
 			<div id="hero-title">
 				<h1>Hi,</h1>
 				<p class="body-text">I am Alpin Jestinera, UX Designer based in Bandung, Indonesia. I have 2+ years experience in UI/UX Design. Nice to e-meet you!</p>
-				<button type="button">EXPLORE</button>
+				<button type="button">explore</button>
 			</div>
 			<div id="hero-illustration">
 				<div class="illustraion-container">
@@ -40,9 +43,9 @@
 
 			</div>
 		</div>
-
 	</div>
 
+	<!-- Skills & Work Section | The content is looping with js below-->
 	<div class="section white-bg pad-lr" id="skills-work-section">
 		<div id="skill-section">
 			<h2 class="section-title">skills</h2>
@@ -56,18 +59,15 @@
 
 	</div>
 
+	<!-- Portfolio Gallery Section |The content is looping with js below-->
 	<div class="section white-bg pad-lr" id="design-section">
 		<h2 class="section-title">design</h2>
 		<div id="portfolio-gallery">
-			<div class="gallery-item"></div>
-			<div class="gallery-item"></div>
-			<div class="gallery-item"></div>
-			<div class="gallery-item"></div>
-			</div>
+			
 		</div>
 	</div>
 	
-
+	<!-- About Section -->
 	<div class="section black-bg pad-lr" id="about-section">
 		<div id="about-text-section">
 			<h2 class="section-title">about</h2>
@@ -76,15 +76,17 @@
 
 			Are you interested to collaborate with me? Contact me on linkedin or write me an e-mail by pressing the button below
 			</p>
-			<button type="button">CONTACT ME</button>
+			
 		</div>
 	</div>
-	
-	
 
 </body>
 
+
+
+<!-- Scripts -->
 <script>
+	// Skill Pills
 	const skills = ['UX Design', 
 				'UI Design', 
 				'Prototyping', 
@@ -106,11 +108,14 @@
 	
 	skills.forEach(function(element) {
 		let li = document.createElement("li");
-		li.className = "pill-items body-2-text";
+		li.className = "pill-items body-3-text";
 		li.appendChild(document.createTextNode(element));
+		
 		document.getElementById("skill-pills").appendChild(li);
 	});
 
+
+	//Work Experience Looping
 	const workExp = [
 		{
 			year: "2021 – Present",
@@ -135,15 +140,15 @@
 	]
 
 	workExp.forEach(function(element) {
-		let text = ""
+		// let text = ""
 		let li = document.createElement("li");
 		li.className = "work-exp-items";
 		
 		let pYear = document.createElement("p");
-		pYear.className = "body-text";
+		pYear.className = "body-3-text";
 		pYear.appendChild(document.createTextNode(element.year));
 		let pCompany = document.createElement("p");
-		pCompany.className = "body-text bold";
+		pCompany.className = "body-text semibold";
 		pCompany.appendChild(document.createTextNode(element.company));
 		let pPosition = document.createElement("p");
 		pPosition.className = "body-2-text";
@@ -156,39 +161,69 @@
 		document.getElementById("work-exp-list").appendChild(li)
 		
 	});
+
+	// Gallery Looping
+	const gallery = [
+		{
+			title: "Redesign Member Apps UI",
+			role_client: "Nectico / UI & UX Designer",
+			image_path: "./img/1/cover.jpg"
+		}
+	]
+
+	gallery.forEach(function (element) {
+		let divGalleryItem = document.createElement("div");
+		divGalleryItem.className = "gallery-item";
+
+		let gImage = document.createElement("img");
+		gImage.className = "gallery-item-img";
+		gImage.src = element.image_path;
+		let gTitle = document.createElement("p");
+		gTitle.className = "body-text semibold";
+		gTitle.appendChild(document.createTextNode(element.title));
+		let gRoleClient = document.createElement("p");
+		gRoleClient.className = "body-3-text";
+		gRoleClient.appendChild(document.createTextNode(element.role_client));
+
+		divGalleryItem.appendChild(gImage);
+		divGalleryItem.appendChild(gTitle);
+		divGalleryItem.appendChild(gRoleClient);
+
+		document.getElementById("portfolio-gallery").appendChild(divGalleryItem);
+	});
 	
 
-	const knob = document.getElementById("knob");
-	function calculateDegree(e) {
-		const x1 = window.innerWidth / 2;
-		const y1 = window.innerHeight / 2;
-		const x2 = e.clientX;
-		const y2 = e.clientY;
+	// const knob = document.getElementById("knob");
+	// function calculateDegree(e) {
+	// 	const x1 = window.innerWidth / 2;
+	// 	const y1 = window.innerHeight / 2;
+	// 	const x2 = e.clientX;
+	// 	const y2 = e.clientY;
 
-		const deltaX = x1 - x2;
-		const deltaY = y1 - y2;
+	// 	const deltaX = x1 - x2;
+	// 	const deltaY = y1 - y2;
 
-		const rad = Math.atan2(deltaY, deltaX);
+	// 	const rad = Math.atan2(deltaY, deltaX);
 
-		let deg = rad * (180 / Math.PI);
+	// 	let deg = rad * (180 / Math.PI);
 
-		return deg;
-	}
+	// 	return deg;
+	// }
 
-	knob.addEventListener("mousedown", function () {
-		console.log("mousedown")
-		knob.addEventListener("mousemove", rotate);
-			function rotate(e) {
-				const result = Math.floor(calculateDegree(e) - 90);
-				console.log(result);
-				knob.style.transform = 'rotate(' + result + 'deg)';
+	// knob.addEventListener("mousedown", function () {
+	// 	console.log("mousedown")
+	// 	knob.addEventListener("mousemove", rotate);
+	// 		function rotate(e) {
+	// 			const result = Math.floor(calculateDegree(e) - 90);
+	// 			console.log(result);
+	// 			knob.style.transform = 'rotate(' + result + 'deg)';
 				
-			}
-		knob.addEventListener("mouseup", function () {
-			console.log("mouseup");
-			knob.removeEventListener("mousemove", rotate);
-		});
-	});
+	// 		}
+	// 	knob.addEventListener("mouseup", function () {
+	// 		console.log("mouseup");
+	// 		knob.removeEventListener("mousemove", rotate);
+	// 	});
+	// });
 	
 </script>
 </html>
